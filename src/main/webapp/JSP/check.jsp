@@ -16,7 +16,9 @@
 <h2>图书借阅系统-后台管理-查看页面</h2>
 <script src="/resources/js/jquery-1.12.4.js"></script>
 <%=session.getId()%>
-
+<div>
+    <%@include file="banner.jsp"%>
+</div>
 <c:out value=""/>
 <sf:form action="/update" method="post" modelAttribute="book">
     <table>
@@ -45,7 +47,7 @@
         </tr>
         <tr>
             <td>入库人：&nbsp;<sf:input path="createdBy" readonly="true"></sf:input></td>
-            <td>入库时间：<sf:input type="date" path="creationTime" readonly="true"></sf:input></td>
+            <td>入库时间：<sf:input type="datetime-local" path="creationTime"></sf:input></td>
         </tr>
     </table>
 

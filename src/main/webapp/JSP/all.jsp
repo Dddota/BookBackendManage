@@ -17,17 +17,23 @@
  }
 </style>
 <body>
+<script src="../resources/js/jquery-1.12.4.js">
+    var BookTypeList="${sessionScope.bookTypeList}";
+</script>
+<script src="../resources/js/search.js"></script>
 
 <h2>图书借阅系统-后台管理</h2>
-<%=session.getId()%>
-<form action="/search">
-    图书名称:<input name="name" value="${name}">
-    <input type="submit" value="查询">
-</form>
+<%=session.getId()%><br>
+<div>
+    <%@include file="banner.jsp"%>
+</div>
+
+图书名称:<input name="name" value="" id="search_name"><input type="submit" value="查询" id="search_button"><br>
+
 <a href="/add"><input type="button" value="新增"></a>
 
 <form action="all" method="post">
-    <table>
+    <table id="table_list">
         <tr>
             <th>图书编号</th>
             <th>图书分类</th>

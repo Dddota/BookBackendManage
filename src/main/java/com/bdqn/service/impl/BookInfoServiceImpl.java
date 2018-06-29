@@ -47,8 +47,6 @@ public class BookInfoServiceImpl implements BookInfoService {
 
     @Override
     public List<BookInfo> selectBookByName(String info) {
-        BookInfoExample.Criteria criteria=bookInfoExample.createCriteria();
-        criteria.andBookNameLike("%"+info+"%");
-        return bookInfoMapper.selectByExample(bookInfoExample);
+        return bookInfoMapper.selectByName(info);
     }
 }

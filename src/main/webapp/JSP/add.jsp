@@ -16,21 +16,11 @@
 <body>
 <h2>图书借阅系统-后台管理-新增页面</h2>
 <script src="/resources/js/jquery-1.12.4.js"></script>
-<script>
-    $(function () {
-        var now = new Date();
-//格式化日，如果小于9，前面补0
-        var day = ("0" + now.getDate()).slice(-2);
-//格式化月，如果小于9，前面补0
-        var month = ("0" + (now.getMonth() + 1)).slice(-2);
-//拼装完整日期格式
-        var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
-//完成赋值
-        $("#time").val(today)
-    })
-    
-</script>
+<script src="/resources/js/datetime.js"></script>
 <%=session.getId()%>
+<div>
+    <%@include file="banner.jsp"%>
+</div>
 <sf:form action="/add" method="post" modelAttribute="bookInfo">
     <table>
         <tr>
@@ -56,7 +46,7 @@
         </tr>
         <tr>
             <td>入库人：&nbsp;<sf:input path="createdBy"></sf:input><sf:errors path="createdBy"/></td>
-            <td>入库时间：<sf:input type="date" path="creationTime" id="time"></sf:input><sf:errors path="creationTime"/></td>
+            <td>入库时间：<sf:input type="datetime-local" path="creationTime" id="time"></sf:input><sf:errors path="creationTime"/></td>
         </tr>
     </table>
     <input type="submit" value="提交"/>

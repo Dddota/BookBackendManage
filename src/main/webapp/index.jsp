@@ -2,7 +2,7 @@
 <html>
 <body>
 <script type="text/javascript">
-    window.location.href="all";
+    window.location.href="/all";
 </script>
 </body>
 </html>

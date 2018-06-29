@@ -14,6 +14,9 @@
 </head>
 <body>
 <script src="/resources/js/jquery-1.12.4.js"></script>
+<div>
+    <%@include file="banner.jsp"%>
+</div>
 <sf:form action="/doupdate" method="post" modelAttribute="book">
     <sf:hidden path="bookId"/>
     <table>
@@ -42,7 +45,7 @@
         </tr>
         <tr>
             <td>入库人：&nbsp;<sf:input path="createdBy"></sf:input></td>
-            <td>入库时间：<sf:input path="creationTime"></sf:input></td>
+            <td>入库时间：<sf:input type="datetime-local" path="creationTime" ></sf:input></td>
         </tr>
     </table>
     <input type="submit" value="提交"/>

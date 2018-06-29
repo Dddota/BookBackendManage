@@ -71,7 +71,7 @@ public class BookInfo implements Serializable {
     * 创建时间
     **/
     @JSONField(format ="yyyy年MM月dd日 HH:mm:ss")
-    private java.sql.Date creationTime;
+    private Timestamp creationTime;
 
     /**
     * 最新更新时间
@@ -198,16 +198,16 @@ public class BookInfo implements Serializable {
         this.createdBy = createdBy == null ? null : createdBy.trim();
     }
 
-    public java.sql.Date getCreationTime() {
+    public Timestamp getCreationTime() {
         return creationTime;
     }
 
-    public BookInfo withCreationTime(java.sql.Date creationTime) {
+    public BookInfo withCreationTime(Timestamp creationTime) {
         this.setCreationTime(creationTime);
         return this;
     }
 
-    public void setCreationTime(java.sql.Date creationTime) {
+    public void setCreationTime(Timestamp creationTime) {
         this.creationTime = creationTime;
     }
 
@@ -224,25 +224,19 @@ public class BookInfo implements Serializable {
         this.lastUpdatetime = lastUpdatetime;
     }
 
+    public String getBookTypeName() {
+        return bookTypeName;
+    }
+
+    public void setBookTypeName(String bookTypeName) {
+        this.bookTypeName = bookTypeName;
+    }
+
+    private String bookTypeName;
+
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", bookId=").append(bookId);
-        sb.append(", bookCode=").append(bookCode);
-        sb.append(", bookName=").append(bookName);
-        sb.append(", bookType=").append(bookType);
-        sb.append(", bookAuthor=").append(bookAuthor);
-        sb.append(", publishPress=").append(publishPress);
-        sb.append(", publishDate=").append(publishDate);
-        sb.append(", borrowed=").append(borrowed);
-        sb.append(", createdBy=").append(createdBy);
-        sb.append(", creationTime=").append(creationTime);
-        sb.append(", lastUpdatetime=").append(lastUpdatetime);
-        sb.append("]");
-        return sb.toString();
+        return "BookInfo{" + "bookId=" + bookId + ", bookCode='" + bookCode + '\'' + ", bookName='" + bookName + '\'' + ", bookType=" + bookType + ", bookAuthor='" + bookAuthor + '\'' + ", publishPress='" + publishPress + '\'' + ", publishDate=" + publishDate + ", borrowed=" + borrowed + ", createdBy='" + createdBy + '\'' + ", creationTime=" + creationTime + ", lastUpdatetime=" + lastUpdatetime + ", bookTypeName='" + bookTypeName + '\'' + '}';
     }
 
     @Override

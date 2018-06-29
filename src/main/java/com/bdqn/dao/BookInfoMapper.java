@@ -29,4 +29,6 @@ public interface BookInfoMapper {
     int updateByPrimaryKeySelective(BookInfo record);
 
     int updateByPrimaryKey(BookInfo record);
+
+    List<BookInfo>selectByName(@Param("name")String name);
 }

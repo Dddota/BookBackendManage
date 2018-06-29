@@ -16,6 +16,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.awt.print.Book;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -33,22 +35,26 @@ public class Test {
     @Autowired
     BookTypeMapper bookTypeMapper;
     @Autowired
+    BookInfoMapper bookInfoMapper;
+    @Autowired
     BookTypeService bookTypeService;
     @Autowired
     BookInfoService bookInfoService;
     @org.junit.Test
     public void test(){
-        List<BookType> bookTypeList=bookTypeService.getAllBookType();
-        System.out.println(bookTypeList.get(1));
-        List<BookInfo>bookInfoList=bookInfoService.getAllBook();
+        List<BookInfo>bookInfoList=bookInfoMapper.selectByName("天");
+        for (BookInfo bookInfo:bookInfoList
+             ) {
+            System.out.println(bookInfo.toString());
+
+        }
         System.out.println(bookInfoList.toString());
     }
     @org.junit.Test
-    public void jingtaiTest(){
-        BookTypeExample bookTypeExample=new BookTypeExample();
-        List<BookType> bookTypeList=bookTypeMapper.selectByExample(bookTypeExample);
-        BookType bookType=bookTypeList.get(0);
-        System.out.println(bookType.getId());
+    public void selectTest(){
+        BookInfo bookInfo=bookInfoService.selectBookById(6);
+        System.out.println(bookInfo.getLastUpdatetime());
+
     }
 
 
