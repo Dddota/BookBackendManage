@@ -3,23 +3,13 @@ package com.bdqn.uitl;
 import com.bdqn.dao.BookInfoMapper;
 import com.bdqn.dao.BookTypeMapper;
 import com.bdqn.entity.BookInfo;
-import com.bdqn.entity.BookInfoExample;
-import com.bdqn.entity.BookType;
-import com.bdqn.entity.BookTypeExample;
 import com.bdqn.service.BookInfoService;
 import com.bdqn.service.BookTypeService;
 import lombok.extern.java.Log;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import java.awt.print.Book;
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 /**

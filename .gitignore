@@ -1,0 +1,29 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+.idea/dataSources/
+.idea/vcs.xml
+.idea/workspace.xml
+src/main/java/com/bdqn/dao/BookLogMapper.java
+src/main/java/com/bdqn/dao/UserInfoMapper.java
+src/main/java/com/bdqn/dao/UserListMapper.java
+src/main/java/com/bdqn/entity/BookLog.java
+src/main/java/com/bdqn/entity/BookLogExample.java
+src/main/java/com/bdqn/entity/UserInfo.java
+src/main/java/com/bdqn/entity/UserInfoExample.java
+src/main/java/com/bdqn/entity/UserList.java
+src/main/java/com/bdqn/entity/UserListExample.java
+src/main/java/com/bdqn/test/
+src/main/resources/mapper/BookLogMapper.xml
+src/main/resources/mapper/UserInfoMapper.xml
+src/main/resources/mapper/UserListMapper.xml
+src/main/webapp/JSP/Book/
+src/main/webapp/WEB-INF/config/
+src/main/webapp/resources/css/
+target/
