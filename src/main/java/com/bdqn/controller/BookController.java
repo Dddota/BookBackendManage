@@ -29,11 +29,11 @@ import java.util.List;
  * @Date 2018/3/27 21:45
  */
 /**
-* 增
-* 查
-* 改
-* 删？
-* */
+ * 增
+ * 查
+ * 改
+ * 删？
+ * */
 @Log
 @Controller
 public class BookController {
@@ -105,7 +105,7 @@ public class BookController {
         bookInfoService.updateBook(bookInfo);
         log.info("修改");
         return "redirect:/all";
-        }
+    }
     @RequestMapping(value = "/del/{id}",method = RequestMethod.GET)
     public String delBook(@PathVariable Integer id,Model model){
         int row=bookInfoService.delBook(id);
